@@ -1,12 +1,10 @@
 ---
-- name: copy files to destination
+- name: Let's copy our executable script to remote location, execute script and get result back.
+  remote_user: root
+  sudo: yes
   hosts: all
-  become: true
   tasks:
-    - name: copy src.txt as dest.txt in the same dir 
-      copy:
-        src: /tmp/bmcagentinstall.sh/
-        dest: /tmp/
-        remote_src: yes
-      tags:
-        - simple_copy
+     - name: Transfer executable script script
+       copy: src=/tmp/bmcagentinstall.sh dest=/tmp mode=0777
+     - name: Execute the script
+       command: sh /tmp/bmcagentinstall.sh
