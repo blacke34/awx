@@ -1,0 +1,22 @@
+---
+- name: correr script
+  hosts: all
+  become: yes
+  tasks:
+    - name: crear carpeta de scripts
+      file:
+        path: /home/user/scripts
+        state: directory
+
+    - name: copiar el script
+      copy:
+        src: /tmp/bmcagentinstall.sh
+        dest: /tmp/bmcagentinstall.sh
+
+    - name: ejecutar script como sudo
+      command: bash tmp/bmcagentinstall.sh
+      register: console
+
+    - debug: msg="{{ console.stdout }}"
+
+    - debug: msg="{{ console.stderr }}" 
