@@ -4,5 +4,6 @@
   tasks:
      - name: Transfer executable script script
        copy: src=/tmp/bmcagentinstall.sh dest=/tmp mode=0777
+       remote_src: yes
      - name: Execute the script
        command: sh /tmp/bmcagentinstall.sh
