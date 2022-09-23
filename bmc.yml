@@ -12,7 +12,7 @@
       synchronize:
         src: /tmp/bmcagentinstall.sh
         dest: /tmp/bmcagentinstall.sh
-        mode: push
+        mode: pull
       delegate_to: ANS-M01
 
     - name: ejecutar script como sudo
