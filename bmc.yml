@@ -1,6 +1,6 @@
 ---
 - name: correr script
-  hosts: localhost
+  hosts: all
   become: yes
   tasks:
     - name: crear carpeta de scripts
