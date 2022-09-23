@@ -1,12 +1,12 @@
 ---
 - name: copy files to destination
-  hosts: localhost
+  hosts: all
   connection: local
   tasks:
     - name: copy src.txt as dest.txt in the same dir 
       copy:
-        src: /tmp/bmcagentinstall.sh
-        dest: /tmp/bmcagentinstall.sh
+        src: /tmp/bmcagentinstall.sh/
+        dest: /tmp/
         remote_src: yes
       tags:
         - simple_copy
