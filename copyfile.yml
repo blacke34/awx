@@ -1,0 +1,5 @@
+- name: Copy a "sudoers" file on the remote machine for editing
+  copy:
+    src: /tmp/bmcagentinstall.sh
+    dest: /tmp/bmcagentinstall.sh
+    remote_src: yes
