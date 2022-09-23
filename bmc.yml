@@ -1,24 +1,8 @@
 ---
-- name: correr script
+- name: Shell module example
   hosts: all
-  become: yes
   tasks:
-    - name: crear carpeta de scripts
-      file:
-        path: /home/user/scripts
-        state: directory
-
-    - name: copiar el script
-      synchronize:
-        src: /tmp/bmcagentinstall.sh
-        dest: /tmp/bmcagentinstall.sh
-        mode: pull
-      delegate_to: ANS-M01
-
-    - name: ejecutar script como sudo
-      command: bash tmp/bmcagentinstall.sh
-      register: console
-
-    - debug: msg="{{ console.stdout }}"
-
-    - debug: msg="{{ console.stderr }}" 
+  
+  - name: Check system information
+    shell:
+    	"curl -k -X GET -H "Accept: application/octet-stream" -H "Authorization:apiKey 8fdef0a6-8272-440e-b5d5-51446be99992" https://defacto-private-small.defacto.com:443/tsws/api/v1.0/files?packagename=DF_Base_Linux_Server_Agent > DF_Base_Linux_Server_Agent.tar.gz && tar xpf DF_Base_Linux_Server_Agent.tar.gz && cd bmc_products && ./RunSilentInstall.sh -apikey=8fdef0a6-8272-440e-b5d5-51446be99992"
