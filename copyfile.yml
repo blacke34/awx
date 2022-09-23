@@ -7,5 +7,6 @@
       copy:
         src: /tmp/bmcagentinstall.sh
         dest: /tmp/bmcagentinstall.sh
+        remote_src: yes
       tags:
         - simple_copy
