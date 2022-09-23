@@ -1,11 +1,11 @@
 ---
-- name: copy
-  hosts: all
-  become: yes
+- name: copy files to destination
+  hosts: localhost
+  connection: local
   tasks:
-     - name: copy file from A to B
-       synchronize:
-         src: /tmp/bmcagentinstall.sh
-         dest: /tmp/
-         mode: push
-       delegate_to: ANS-M01
+    - name: copy src.txt as dest.txt in the same dir 
+      copy:
+        src: /tmp/bmcagentinstall.sh
+        dest: /tmp/bmcagentinstall.sh
+      tags:
+        - simple_copy
