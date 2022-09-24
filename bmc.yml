@@ -3,7 +3,7 @@
    tasks:
    - name: Creating a file with content
      copy:
-       dest: "/tmp"
+       dest: "/tmp/"
        content: |
          line 01
          line 02
