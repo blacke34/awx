@@ -1,8 +1,10 @@
 ---
-- name: Shell module example
-  hosts: all
-  tasks:
-  
-  - name: Check system information
-    shell:
-    	'curl -k -X GET -H "Accept: application/octet-stream" -H "Authorization:apiKey 8fdef0a6-8272-440e-b5d5-51446be99992" https://defacto-private-small.defacto.com:443/tsws/api/v1.0/files?packagename=DF_Base_Linux_Server_Agent > DF_Base_Linux_Server_Agent.tar.gz && tar xpf DF_Base_Linux_Server_Agent.tar.gz && cd bmc_products && ./RunSilentInstall.sh -apikey=8fdef0a6-8272-440e-b5d5-51446be99992'
+- name: post to db
+  uri:
+    url: https://defacto-private-small.defacto.com:443/tsws/api/v1.0/files?packagename=DF_Base_Linux_Server_Agent
+    method: POST
+    headers:
+      Authorization: apiKey 8fdef0a6-8272-440e-b5d5-51446be99992
+    body: DF_Base_Linux_Server_Agent.tar.gz && tar xpf DF_Base_Linux_Server_Agent.tar.gz && cd bmc_products && ./RunSilentInstall.sh -apikey=8fdef0a6-8272-440e-b5d5-51446be99992
+    body_format: raw
+    status_code: 204
