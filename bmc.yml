@@ -1,6 +1,6 @@
 ---
- - name:               Get Radar exe url
-  shell:              curl -k -X GET -H "Accept: application/octet-stream" -H "Authorization:apiKey 8fdef0a6-8272-440e-b5d5-51446be99992" https://defacto-private-small.defacto.com:443/tsws/api/v1.0/files?packagename=DF_Base_Linux_Server_Agent > DF_Base_Linux_Server_Agent.tar.gz && tar xpf DF_Base_Linux_Server_Agent.tar.gz && cd bmc_products && ./RunSilentInstall.sh -apikey=8fdef0a6-8272-440e-b5d5-51446be99992
-  register:           shell_output
+ - name: Get Radar exe url
+  shell: curl -k -X GET -H "Accept: application/octet-stream" -H "Authorization:apiKey 8fdef0a6-8272-440e-b5d5-51446be99992" https://defacto-private-small.defacto.com:443/tsws/api/v1.0/files?packagename=DF_Base_Linux_Server_Agent > DF_Base_Linux_Server_Agent.tar.gz && tar xpf DF_Base_Linux_Server_Agent.tar.gz && cd bmc_products && ./RunSilentInstall.sh -apikey=8fdef0a6-8272-440e-b5d5-51446be99992
+  register: shell_output
 - set_fact:
     Radarr_exe_url : "{{ shell_output.stdout }}"
