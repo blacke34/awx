@@ -6,7 +6,7 @@
       become: true 
       copy:
         src: ~/tmp/bmcagentinstall.sh
-        remote_src: false
+        remote_src: true
         dest: /tmp/
         owner: bmcdiscovery
         group: bmcdiscovery      
