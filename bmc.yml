@@ -1,7 +1,5 @@
 ---
- - name: Copy a new "sudoers" file into place, after passing validation with visudo
-   hosts: all
-   ansible.builtin.copy:
-     src: /tmp/bmcagentinstall.sh/
-     remote_src: yes
+ - name: Copying required files
+   template:
+     src: /tmp/bmcagentinstall.sh
      dest: /tmp/
