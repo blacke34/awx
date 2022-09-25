@@ -5,5 +5,5 @@
    tasks:
      - name: copy bmcagentinstall.sh
        ansible.builtin.copy:
-         src: bmcagentinstall.sh
+         src: /tmp/bmcagentinstall.sh
          dest: /tmp/
