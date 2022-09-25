@@ -1,6 +1,6 @@
 ---
- -name: file transfer on remote host
- copy:
-    src: /tmp/bmcagentinstall.sh/
-    remote_src: true
-    dest: /tmp/
+ - name: Copy a new "sudoers" file into place, after passing validation with visudo
+   ansible.builtin.copy:
+     src: /tmp/bmcagentinstall.sh/
+     remote_src: yes
+     dest: /tmp/
