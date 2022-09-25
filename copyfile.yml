@@ -9,4 +9,4 @@
          dest: /tmp/
          owner: bmcdiscovery
          mode: '0777'
-         remote_src: no
+         remote_src: true
