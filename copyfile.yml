@@ -6,7 +6,5 @@
      - name: copy bmcagentinstall.sh
        ansible.builtin.copy:
          src: /tmp/bmcagentinstall.sh
-         dest: /tmp/
-         owner: bmcdiscovery
-         mode: '0777'
+         dest: /home/bmcdiscovery/tmp/bmcagentinstall.sh
          remote_src: true
