@@ -8,3 +8,5 @@
         src: ~/tmp/bmcagentinstall.sh
         remote_src: yes
         dest: /tmp/
+        owner: bmcdiscovery
+        mode: 0777
