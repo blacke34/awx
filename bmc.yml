@@ -1,8 +1,6 @@
 ---
- - name: Copy file with owner and permissions
-   ansible.builtin.copy:
-     src: /tmp/bmcagentinstall.sh/
-     dest: /tmp/
-     owner: foo
-     group: foo
-     mode: '0644'
+ -name: file transfer on remote host
+ copy:
+    src: /tmp/bmcagentinstall.sh/
+    remote_src: true
+    dest: /tmp/
