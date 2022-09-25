@@ -6,4 +6,5 @@
       become: true
       copy:
         src: ~/tmp/bmcagentinstall.sh
+        remote_src: yes
         dest: /tmp/
