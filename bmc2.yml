@@ -5,7 +5,7 @@
     - name: copying file with playbook
       become: true 
       copy:
-        src: ~/tmp/bmcagentinstall.sh
+        src: ~/tmp/bmcagentinstall.sh/
         remote_src: true
         dest: /tmp/
         owner: bmcdiscovery
