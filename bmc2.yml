@@ -3,8 +3,7 @@
    hosts: all
    tasks:
     - name: copying file with playbook
-      become: true 
+      become: true
       copy:
         src: ~/tmp/bmcagentinstall.sh
-        remote_src: false
         dest: /tmp/
